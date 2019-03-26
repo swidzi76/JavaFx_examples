@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="vBox" alignment="TOP_CENTER" maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" onKeyPressed="#keyPressed" prefHeight="600.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar focusTraversable="false" nodeOrientation="RIGHT_TO_LEFT">
+        <menus>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#buttonAboutClicked" text="About" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#buttonHelpClicked" text="Help" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextField fx:id="textField" editable="false" focusTraversable="false" onKeyPressed="#keyPressed">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </TextField>
+      <HBox alignment="TOP_CENTER" fillHeight="false" spacing="20.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#button7Clicked" prefHeight="80.0" prefWidth="80.0" text="7" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+            </Button>
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#button8Clicked" prefHeight="80.0" prefWidth="80.0" text="8" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="button9" alignment="CENTER" layoutX="75.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#button9Clicked" prefHeight="80.0" prefWidth="80.0" text="9" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+            </Button>
+            <Button alignment="CENTER" layoutX="140.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonDelClicked" prefHeight="80.0" prefWidth="80.0" text="DEL" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+            </Button>
+            <Button alignment="CENTER" layoutX="434.0" layoutY="18.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonAcClicked" prefHeight="80.0" prefWidth="80.0" text="AC" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+      </HBox>
+      <HBox alignment="TOP_CENTER" fillHeight="false" layoutX="20.0" layoutY="87.0" spacing="20.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#button4Clicked" prefHeight="80.0" prefWidth="80.0" text="4" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#button5Clicked" prefHeight="80.0" prefWidth="80.0" text="5" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="75.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#button6Clicked" prefHeight="80.0" prefWidth="80.0" text="6" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonPlus" alignment="CENTER" layoutX="140.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonPlusClicked" prefHeight="80.0" prefWidth="80.0" text="+" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonMinus" alignment="CENTER" layoutX="434.0" layoutY="18.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonMinusClicked" prefHeight="80.0" prefWidth="80.0" text="-" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+      </HBox>
+      <HBox alignment="TOP_CENTER" fillHeight="false" layoutX="20.0" layoutY="193.0" spacing="20.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#button1Clicked" prefHeight="80.0" prefWidth="80.0" text="1" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#button2Clicked" prefHeight="80.0" prefWidth="80.0" text="2" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="75.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#button3Clicked" prefHeight="80.0" prefWidth="80.0" text="3" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonMul" alignment="CENTER" layoutX="140.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonMulClicked" prefHeight="80.0" prefWidth="80.0" text="*" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonDiv" alignment="CENTER" layoutX="434.0" layoutY="18.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonDivClicked" prefHeight="80.0" prefWidth="80.0" text="/" textAlignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+      </HBox>
+      <HBox alignment="TOP_CENTER" fillHeight="false" layoutX="20.0" layoutY="299.0" spacing="20.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#button0Clicked" prefHeight="80.0" prefWidth="80.0" text="0" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonPlusMinus" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonPlusMinusClicked" prefHeight="80.0" prefWidth="80.0" text="+/-" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonDot" alignment="CENTER" layoutX="75.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonDotClicked" prefHeight="80.0" prefWidth="80.0" text="." textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="140.0" layoutY="10.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="80.0" prefWidth="80.0" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER" layoutX="434.0" layoutY="18.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#buttonCalculateClicked" prefHeight="80.0" prefWidth="80.0" text="=" textAlignment="CENTER" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </opaqueInsets>
+      </HBox>
+   </children>
+   <opaqueInsets>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>
