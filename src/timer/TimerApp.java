@@ -39,11 +39,11 @@ public class TimerApp extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        controller.buttonClicked();
+//        controller.buttonClicked();
 
         Timeline timeline = new Timeline(new KeyFrame(
                 Duration.millis(1000),
-                ae -> controller.setLabel()));
+                ae -> controller.setLabels()));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
 

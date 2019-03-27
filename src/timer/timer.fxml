@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timer.ControllerTimer">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timer.ControllerTimer">
    <children>
       <Label fx:id="label1" alignment="TOP_LEFT" nodeOrientation="LEFT_TO_RIGHT" text="time" VBox.vgrow="ALWAYS">
          <VBox.margin>
@@ -22,11 +22,71 @@
             <Font size="51.0" />
          </font>
       </Label>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="209.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label text="Do 1 przerwy :">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelTimeToFirstBreak" text="timeToFirstBreak" textFill="#00f56e">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="159.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label text="Do 2 przerwy :">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelTimeToSecondBreak" text="timeToSecondBreak" textFill="#00f56e">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="209.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label text="Do 3 przerwy :">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelTimeToThirdBreak" text="timeToThirdBreak" textFill="#00f56e">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
       <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
          <children>
             <Label text="Do końca zajęć :">
                <font>
-                  <Font size="36.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
             <Label fx:id="labelTimeToEnd" text="timeToEnd" textFill="#00f56e">
