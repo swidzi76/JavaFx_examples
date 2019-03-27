@@ -16,6 +16,7 @@ import javafx.util.Duration;
 import sample.Controller;
 import sample.ControllerHelpBox;
 
+import java.time.LocalTime;
 import java.util.Timer;
 import java.util.concurrent.ScheduledExecutorService;
 public class TimerApp extends Application {
@@ -35,11 +36,13 @@ public class TimerApp extends Application {
         primaryStage.setScene(scene);
 
         primaryStage.setTitle(ControllerTimer.TITLE + " v. " + ControllerTimer.VER);
-//        primaryStage.setScene(new Scene(root, 400,    400));
         primaryStage.setResizable(false);
         primaryStage.show();
 
-//        controller.buttonClicked();
+        controller.localTimeEnd = LocalTime.of(16,00,00);
+        controller.localTimeFirstBreak = LocalTime.of(10,30,00);
+        controller.localTimeSecondBreak = LocalTime.of(12,30,00);
+        controller.localTimeThirdBreak = LocalTime.of(14,30,00);
 
         Timeline timeline = new Timeline(new KeyFrame(
                 Duration.millis(1000),

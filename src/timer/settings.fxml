@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="850.0" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timer.ControllerSettings">
+   <children>
+      <HBox prefHeight="205.0" prefWidth="700.0" spacing="5.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="205.0" prefWidth="238.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="61.0" prefWidth="221.0" text="Czas zakończenia zajęć" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="131.0" prefWidth="227.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Hour" />
+                              <ComboBox fx:id="comboBoxEndHour" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Min" />
+                              <ComboBox fx:id="comboBoxEndMin" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="82.0" layoutY="10.0" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Sec" />
+                              <ComboBox fx:id="comboBoxEndSec" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="205.0" prefWidth="238.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="61.0" prefWidth="221.0" text="Pierwsza przerwa" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="131.0" prefWidth="227.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Hour" />
+                              <ComboBox fx:id="comboBox1pHour" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Min" />
+                              <ComboBox fx:id="comboBox1pMin" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="82.0" layoutY="10.0" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Sec" />
+                              <ComboBox fx:id="comboBox1pSec" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="253.0" layoutY="10.0" prefHeight="205.0" prefWidth="238.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="61.0" prefWidth="221.0" text="Druga przerwa" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="131.0" prefWidth="227.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Hour" />
+                              <ComboBox fx:id="comboBox2pHour" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Min" />
+                              <ComboBox fx:id="comboBox2pMin" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="82.0" layoutY="10.0" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Sec" />
+                              <ComboBox fx:id="comboBox2pSec" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="480.0" layoutY="10.0" prefHeight="205.0" prefWidth="238.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="61.0" prefWidth="221.0" text="Trzecia przerwa" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="131.0" prefWidth="227.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Hour" />
+                              <ComboBox fx:id="comboBox3pHour" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Min" />
+                              <ComboBox fx:id="comboBox3pMin" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="82.0" layoutY="10.0" prefHeight="100.0" prefWidth="72.0" spacing="10.0">
+                           <children>
+                              <Label text="Sec" />
+                              <ComboBox fx:id="comboBox3pSec" prefWidth="150.0" promptText="0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#buttonOkClicked" prefHeight="31.0" prefWidth="165.0" text="OK" />
+            <Button mnemonicParsing="false" onAction="#buttonCancelClicked" prefHeight="31.0" prefWidth="165.0" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
