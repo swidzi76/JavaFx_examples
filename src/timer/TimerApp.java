@@ -16,6 +16,8 @@ import javafx.util.Duration;
 import sample.Controller;
 import sample.ControllerHelpBox;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.time.LocalTime;
 import java.util.Timer;
 import java.util.concurrent.ScheduledExecutorService;
@@ -39,11 +41,21 @@ public class TimerApp extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
 
-        controller.localTimeEnd = LocalTime.of(16,00,00);
-        controller.localTimeFirstBreak = LocalTime.of(10,30,00);
-        controller.localTimeSecondBreak = LocalTime.of(12,30,00);
-        controller.localTimeThirdBreak = LocalTime.of(14,30,00);
 
+//        controller.localTimeEnd = LocalTime.of(16,00,00);
+//        controller.localTimeFirstBreak = LocalTime.of(10,30,00);
+//        controller.localTimeSecondBreak = LocalTime.of(12,30,00);
+//        controller.localTimeThirdBreak = LocalTime.of(14,30,00);
+        //wczytaj dane z pliku
+        // czy plik istnieje
+        File file = new File(controller.SETTINGS_FILE);
+        if(!file.exists()){
+            controller.defaultTime();
+            controller.saveTimesToFile();
+        }
+
+        controller.readTimesFromFile();
+//        controller.saveTimesToFile();
         Timeline timeline = new Timeline(new KeyFrame(
                 Duration.millis(1000),
                 ae -> controller.setLabels()));

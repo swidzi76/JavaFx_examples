@@ -11,6 +11,10 @@ import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -31,7 +35,8 @@ public class ControllerTimer {
 
     private static String  message1 = "";
     final static public String TITLE = "TimerApp";
-    final static public String VER = "1.2";
+    final static public String VER = "1.3";
+    final static public String SETTINGS_FILE = "settings.txt";
     final static public String LABEL_1_BREAK = "do 1 przerwy";
     final static public String LABEL_2_BREAK = "do 2 przerwy";
     final static public String LABEL_3_BREAK = "do 3 przerwy";
@@ -69,6 +74,11 @@ public class ControllerTimer {
         stage.showAndWait();
 
     }
+    public void buttonDefaultSettingsClicked(ActionEvent event) throws IOException{
+        defaultTime();
+        saveTimesToFile();
+    }
+
     public void setLabels(){
         // ustawienie czasu w label
         LocalDateTime localTime = LocalDateTime.now();
@@ -109,9 +119,13 @@ public class ControllerTimer {
     private void setLabel(Label label, Duration duration){
         int hour=0, min=0, sec=0;
         if(duration.getSeconds()>=0){
-            hour = (int) duration.toHours();
-            min = (int) (duration.toMinutes() - hour*60);
-            sec = (int) (duration.getSeconds()- hour*3600 - min*60 + 1);
+            int getSec = (int) duration.getSeconds() + 1;
+            hour = getSec / 3600;
+            min = (getSec - hour*3600) / 60;
+            sec = getSec - hour *3600 - min * 60;
+//            hour = (int) duration.toHours();
+//            min = (int) (duration.toMinutes() - hour*60);
+//            sec = (int) (duration.getSeconds()- hour*3600 - min*60 + 1);
             label.setTextFill(Paint.valueOf(COLOR_GREEN));
         }else{
             label.setTextFill(Paint.valueOf(COLOR_RED));
@@ -139,6 +153,59 @@ public class ControllerTimer {
             stringSec = "" + sec;
         }
         return stringHour + " : " + stringMin + " : " + stringSec;
+
+    }
+    public void defaultTime(){
+        localTimeEnd = LocalTime.of(16,00,00);
+        localTimeFirstBreak = LocalTime.of(10,30,00);
+        localTimeSecondBreak = LocalTime.of(12,30,00);
+        localTimeThirdBreak = LocalTime.of(14,30,00);
+    }
+    public void saveTimesToFile() throws IOException{
+        PrintWriter printWriter = new PrintWriter(new FileWriter(SETTINGS_FILE));
+        printWriter.println(""+localTimeFirstBreak.getHour()+","+localTimeFirstBreak.getMinute()+","+localTimeFirstBreak.getSecond());
+        printWriter.println(""+localTimeSecondBreak.getHour()+","+localTimeSecondBreak.getMinute()+","+localTimeSecondBreak.getSecond());
+        printWriter.println(""+localTimeThirdBreak.getHour()+","+localTimeThirdBreak.getMinute()+","+localTimeThirdBreak.getSecond());
+        printWriter.println(""+localTimeEnd.getHour()+","+localTimeEnd.getMinute()+","+localTimeEnd.getSecond());
+        printWriter.close();
+    }
+    public void readTimesFromFile(){
+        String s1;
+        String[] as;
+        int h,m,s;
+        try (Scanner scanner = new Scanner(new File(SETTINGS_FILE))) {
+            s1 = scanner.nextLine();
+            as = s1.split(",");
+            h = Integer.valueOf(as[0]);
+            m = Integer.valueOf(as[1]);
+            s = Integer.valueOf(as[2]);
+            localTimeFirstBreak = LocalTime.of(h,m,s);
+
+            s1 = scanner.nextLine();
+            as = s1.split(",");
+            h = Integer.valueOf(as[0]);
+            m = Integer.valueOf(as[1]);
+            s = Integer.valueOf(as[2]);
+            localTimeSecondBreak = LocalTime.of(h,m,s);
+
+            s1 = scanner.nextLine();
+            as = s1.split(",");
+            h = Integer.valueOf(as[0]);
+            m = Integer.valueOf(as[1]);
+            s = Integer.valueOf(as[2]);
+            localTimeThirdBreak = LocalTime.of(h,m,s);
+
+            s1 = scanner.nextLine();
+            as = s1.split(",");
+            h = Integer.valueOf(as[0]);
+            m = Integer.valueOf(as[1]);
+            s = Integer.valueOf(as[2]);
+            localTimeEnd = LocalTime.of(h,m,s);
+
+
+        } catch (IOException e) {
+            System.out.println("IOException!");
+        }
 
     }
 }

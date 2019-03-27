@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import sample.Controller;
 
+import java.io.IOException;
 import java.time.LocalTime;
 
 public class ControllerSettings {
@@ -71,7 +72,7 @@ public class ControllerSettings {
         comboBox3pSec.setValue(String.valueOf(rootWindow.localTimeThirdBreak.getSecond()));
 
     }
-    public void buttonOkClicked(ActionEvent event) {
+    public void buttonOkClicked(ActionEvent event) throws IOException {
         rootWindow.localTimeEnd = LocalTime.of(Integer.valueOf(comboBoxEndHour.getValue()),
                 Integer.valueOf(comboBoxEndMin.getValue()),
                 Integer.valueOf(comboBoxEndSec.getValue()));
@@ -84,6 +85,7 @@ public class ControllerSettings {
         rootWindow.localTimeThirdBreak = LocalTime.of(Integer.valueOf(comboBox3pHour.getValue()),
                 Integer.valueOf(comboBox3pMin.getValue()),
                 Integer.valueOf(comboBox3pSec.getValue()));
+        rootWindow.saveTimesToFile();
 
         ((Button)event.getSource()).getScene().getWindow().hide();
 //        buttonClose.getScene().getWindow().hide();

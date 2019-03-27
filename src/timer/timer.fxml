@@ -16,6 +16,7 @@
             <Menu mnemonicParsing="false" text="Settings">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#buttonSettingsClicked" text="Settings" />
+                  <MenuItem mnemonicParsing="false" onAction="#buttonDefaultSettingsClicked" text="Default settings" />
               </items>
             </Menu>
          </menus>
