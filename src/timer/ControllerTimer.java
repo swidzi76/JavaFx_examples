@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
@@ -16,6 +17,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
@@ -32,10 +34,12 @@ public class ControllerTimer {
     public Label labelTimeToFirstBrakeDescription;
     public Label labelTimeToSecondBrakeDescription;
     public Label labelTimeToEndDescription;
+    public Label labelProgressBar;
+    public ProgressBar progressBar;
 
     private static String  message1 = "";
     final static public String TITLE = "TimerApp";
-    final static public String VER = "1.3";
+    final static public String VER = "1.4";
     final static public String SETTINGS_FILE = "settings.txt";
     final static public String LABEL_1_BREAK = "do 1 przerwy";
     final static public String LABEL_2_BREAK = "do 2 przerwy";
@@ -50,8 +54,13 @@ public class ControllerTimer {
     public LocalTime localTimeFirstBreak;
     public LocalTime localTimeSecondBreak;
     public LocalTime localTimeThirdBreak;
+
+    // dane kolejnych spotkań w ramach kursu
+    List<LocalDate> dateOfActivities;
     public ControllerTimer() {
 //        labelTimeToEnd.setTextFill(Paint.valueOf(COLOR_GREEN));
+        dateOfActivities = new ArrayList<>();
+        setDateOfActivities();
     }
 
     @FXML
@@ -114,7 +123,13 @@ public class ControllerTimer {
 
         duration = Duration.between(localTime.toLocalTime(), localTimeThirdBreak);
         setLabel(labelTimeToThirdBreak, duration);
-
+        // ustawienie progres bara
+        progressBar.setProgress((double) howManyActivitiesHavePassed() / dateOfActivities.size());
+        double temp = (double) howManyActivitiesHavePassed() / dateOfActivities.size();
+        temp *= 10000;
+        temp = Math.round(temp);
+        temp /=100;
+        labelProgressBar.setText(String.valueOf(temp)+"%");
     }
     private void setLabel(Label label, Duration duration){
         int hour=0, min=0, sec=0;
@@ -208,4 +223,44 @@ public class ControllerTimer {
         }
 
     }
+    private void setDateOfActivities(){
+
+    String[] arrayOfDate = new String[]{"23-02-2019","24-02-2019","02-03-2019","03-03-2019",
+            "09-03-2019","10-03-2019","16-03-2019","17-03-2019","30-03-2019","31-03-2019",
+            "06-04-2019","07-04-2019","13-04-2019","14-04-2019","11-05-2019","12-05-2019",
+            "18-05-2019","19-05-2019","25-05-2019","26-05-2019","14-06-2019","15-06-2019","16-06-2019",
+            "22-06-2019","23-06-2019","29-06-2019","30-06-2019","13-07-2019","14-07-2019",
+            "20-07-2019","21-07-2019","27-07-2019","28-07-2019","03-08-2019","04-08-2019",
+            "24-08-2019","25-08-2019","31-08-2019","01-09-2019","07-09-2019","08-09-2019",
+            "14-09-2019","15-09-2019","28-09-2019","29-09-2019","05-10-2019","06-10-2019",
+            "12-10-2019","13-10-2019","19-10-2019","20-10-2019","26-10-2019","27-10-2019"};
+    String[] temp;
+    String s;
+        System.out.println(" liczba spotkań : " + arrayOfDate.length);
+    for (int i = 0; i < arrayOfDate.length; i++) {
+        s = arrayOfDate[i];
+        System.out.println(" spotkanie nr : "+i+"  - " + s);
+        temp = s.split("-");
+        System.out.println("element nr 2 : " + temp[2]);
+        System.out.println("element nr 1 : " + temp[1]);
+        System.out.println("element nr 0 : " + temp[0]);
+            dateOfActivities.add(LocalDate.of(Integer.parseInt(temp[2]),Integer.parseInt(temp[1]),Integer.parseInt(temp[0])));
+        }
+        System.out.println(" ile mineło zajęć : "+howManyActivitiesHavePassed());
+    }
+    private int howManyActivitiesHavePassed(){
+        int result = 0;
+
+        LocalDate date = LocalDate.now();
+
+        for (LocalDate tempDate : dateOfActivities) {
+            if(date.isBefore(tempDate)){
+                return result;
+            }else{
+                result++;
+            }
+        }
+        return result;
+    }
+
 }

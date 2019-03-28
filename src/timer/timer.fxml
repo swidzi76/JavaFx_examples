@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="450.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timer.ControllerTimer">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="550.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="timer.ControllerTimer">
    <children>
       <MenuBar>
          <menus>
@@ -111,6 +111,16 @@
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="58.0" prefWidth="650.0" spacing="5.0">
+         <children>
+            <Label text="Odbyte zajęcia" />
+            <ProgressBar fx:id="progressBar" prefHeight="28.0" prefWidth="504.0" progress="0.0" />
+            <Label fx:id="labelProgressBar" text="Label" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </HBox>
    </children>
 </VBox>
